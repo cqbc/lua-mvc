@@ -5,11 +5,11 @@
 -- Time: 下午5:58
 -- To change this template use File | Settings | File Templates.
 --
-local mappingResolver = require('resty.webframe.mvc.mapping.MappingResolver')
-local Request = require('resty.webframe.http.Request')
-local Response = require('resty.webframe.http.Response')
-local invoker = require('resty.webframe.mvc.invoker.FunctionInvoker')
-local HttpStatus = require('resty.webframe.http.HttpStatus')
+local mappingResolver = require('src.webframe.mvc.mapping.MappingResolver')
+local Request = require('src.webframe.http.Request')
+local Response = require('src.webframe.http.Response')
+local invoker = require('src.webframe.mvc.invoker.FunctionInvoker')
+local HttpStatus = require('src.webframe.http.HttpStatus')
 
 local dispatcher = {}
 

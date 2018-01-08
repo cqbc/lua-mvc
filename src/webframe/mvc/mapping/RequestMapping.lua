@@ -5,7 +5,7 @@
 -- Time: 下午4:23
 -- To change this template use File | Settings | File Templates.
 --
-local RequestMethod = require('resty.webframe.mvc.mapping.RequestMethod')
+local RequestMethod = require('src.webframe.mvc.mapping.RequestMethod')
 local gsub = ngx.re.gsub
 local requestMapping = {}
 

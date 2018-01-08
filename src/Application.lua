@@ -5,8 +5,8 @@
 -- Time: 下午5:35
 -- mvc 主程序入口
 --
-local dispatcher = require('resty.webframe.mvc.Dispatcher')
-local requestMapping = require('resty.webframe.mvc.mapping.RequestMapping')
+local dispatcher = require('src.webframe.mvc.Dispatcher')
+local requestMapping = require('src.webframe.mvc.mapping.RequestMapping')
 local application = {}
 
 -- 添加请求映射
