@@ -31,7 +31,7 @@
     
     return application
     
-### 3、编写 TestController.lua 脚本，路径为 controller 文件夹下，函数名为 test
+### 3、编写 TestController.lua 脚本，路径为 controller 文件夹下，函数名为 test，request、response 对象由框架传入
     local TestController
     
     function TestController.test(request, response)
