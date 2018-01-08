@@ -7,8 +7,8 @@
     location ~ ^/api/test/param1/(.*)/param2/(.*) {
         default_type 'application/json;charset=utf-8';
         content_by_lua '
-            **local app = require("Application")
-            app:run()**
+            local app = require("Application")
+            app:run()
         ';
     }
     
@@ -18,10 +18,10 @@
     local requestMapping = require('src.webframe.mvc.mapping.RequestMapping')
     local application = {}
     
-    **-- 添加请求映射
+    -- 添加请求映射
     local function initRequestMapping()
         requestMapping.GET('/api/test/param1/{param1}/param2/{param2}', 'test', 'controller.TestController')
-    end**
+    end
     
     initRequestMapping()
     
@@ -31,7 +31,7 @@
     
     return application
     
-### 3、编写 TestController 脚本
+### 3、编写 TestController.lua 脚本，路径为 controller 文件夹下，函数名为 test
     local TestController
     
     function TestController.test(request, response)
