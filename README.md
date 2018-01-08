@@ -48,8 +48,8 @@
     
     return TestController
     
-### 二、API 介绍
-#### 1、Request 对象
+## 二、API 介绍
+### 1、Request 对象
 * request:new() 创建 Request 对象
 * request:getMethod() 获取 HTTP Method
 * request:getHeaders() 获取 HTTP 请求头
@@ -65,7 +65,7 @@
 * request:getURI() 获取 uri
 * request:getBodyData() 获取 body
 
-#### 2、Response 对象
+### 2、Response 对象
 * response:new() 创建 Response 对象
 * response:write(...) 输出数据，Content-Type 为 default_type
 * response:writeTxt(...) 输出文本数据，Content-Type 为 text/plain;charset=utf-8
