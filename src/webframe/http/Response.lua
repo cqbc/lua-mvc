@@ -11,11 +11,10 @@ Response.version = '0.0.1'
 
 function Response:new()
     local instance = {
-        status = 200,
         say = ngx.say,
         exit = ngx.exit,
         redirect = ngx.redirect,
-        header = ngx.header
+        header = ngx.header,
     }
 
     setmetatable(instance, { __index = self })
@@ -50,8 +49,10 @@ function Response:sendOK()
     self.exit(ngx.HTTP_OK)
 end
 
-function Response:sendError(httpStatus)
-    self.exit(httpStatus)
+function Response:sendStatus(httpStatus)
+    ngx.status = httpStatus.code
+    self:writeJson({ code = httpStatus.code, codeMsg = httpStatus.codeMsg })
+    self.exit(ngx.HTTP_OK)
 end
 
 function Response:sendRedirect(location)
@@ -61,20 +62,6 @@ end
 function Response:setHeader(name, value)
     self.header[name] = value
 end
-
-function Response:setStatus(status)
-    if status and pcall(tonumber, status) then
-        self.status = status
-    end
-end
-
-function Response:getStatus()
-    return self.status
-end
-
---function Response:addCookie(cookie)
---
---end
 
 return Response
 
